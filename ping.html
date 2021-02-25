@@ -1,0 +1,20 @@
+<head>
+    <script src="./ping.js"></script>
+    <script>
+    var do_ping = function() {
+        ping(
+            document.getElementById('pingurl').value,
+            document.getElementById('identity').value
+        ).then(function(delta) {
+            alert(delta);
+        }).catch(function(error) {
+            alert(String(error));
+        });
+    };
+    </script>
+</head>
+<body>
+    <input id='pingurl' type='text' value='http://google.com'></input>
+    <input id='identity' type='text' value=''></input>
+    <button onclick='do_ping()'>Ping</button>
+</body>
